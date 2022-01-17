@@ -201,7 +201,7 @@ let guesses = 6;
 
 let selectedCell;
 
-let seed = new Date(y, m, d).getTime()
+let seed = new Date(y, m, d + 1).getTime()
 seed = parseInt(seed / 10000000);
 seed = seed.toString();
 
