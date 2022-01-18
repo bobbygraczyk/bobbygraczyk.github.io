@@ -201,9 +201,21 @@ let guesses = 6;
 
 let selectedCell;
 
-let seed = new Date(y, m, d + 2).getTime()
-seed = parseInt(seed / 10000000);
-seed = seed.toString();
+let queryString = window.location.search;
+let urlParams = new URLSearchParams(queryString);
+let param = urlParams.get('endless')
+
+console.log(param);
+
+let seed;
+
+if (param !== "yes") {
+    seed = new Date(y, m, d + 2).getTime()
+    seed = parseInt(seed / 10000000);
+    seed = seed.toString();
+} else {
+    seed = Math.random();
+}
 
 function random(seed) {
     var x = Math.sin(seed++) * 10000;
@@ -282,6 +294,8 @@ function selectCell(x) {
 
 words = words.split(" ");
 
+console.log(words.length)
+
 function tryGuess() {
     let rowArray = [];
     let colArray = [];
@@ -335,6 +349,9 @@ function tryGuess() {
     })
 
     makeScore();
+    if (guesses == 0) {
+        endGame();
+    }
 }
 
 function makeScore() {
@@ -349,7 +366,6 @@ function makeScore() {
         }
     })
     document.getElementById("guess").innerHTML = guesses;
-    endGame();
 }
 
 function endGame() {
