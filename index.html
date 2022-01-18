@@ -198,8 +198,9 @@
             let seed, selectedCell;
             
             if (param !== "yes") {
-                seed = new Date(y, m, d + 2).getTime()
+                seed = new Date(y, m, (d + 2)).getTime()
                 console.log(seed)
+                console.log(new Date(y, m, (d + 2)))
                 seed = parseInt(seed / 10000000);
                 seed = seed.toString();
             } else {
