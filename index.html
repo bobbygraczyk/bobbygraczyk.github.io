@@ -187,13 +187,7 @@
             let y = date.getUTCFullYear();
             let m = date.getUTCMonth();
             let d = date.getUTCDay();
-            let h = date.getUTCHours();
-            let mi = date.getUTCMinutes();
-            let s = date.getUTCSeconds();
-            let ms = date.getUTCMilliseconds();
-
-            console.log(y, m, d, h, mi, s, ms);
-
+            console.log(y, m, d)
             let rowWords = [false, false, false, false, false];
             let colWords = [false, false, false, false, false];
             let score = 0;
@@ -204,9 +198,9 @@
             let seed, selectedCell;
             
             if (param !== "yes") {
-                seed = new Date(y, m, d, h, m, s, ms).getTime()
+                seed = new Date(y, m, (d + 2)).getTime()
                 console.log(seed)
-                console.log(new Date(y, m, d, h, m, s, ms))
+                console.log(new Date(y, m, (d + 2)))
                 seed = parseInt(seed / 10000000);
                 seed = seed.toString();
             } else {
