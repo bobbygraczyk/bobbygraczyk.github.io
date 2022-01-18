@@ -179,23 +179,23 @@
             YOKEL YOKER YOKES YOKUL YOLKS YOLKY YOMIM YOMPS YONIC YONIS YONKS YOOFS YOOPS YORES YORKS YORPS YOUKS YOUNG YOURN YOURS YOURT YOUSE YOUTH YOWED YOWES YOWIE YOWLS YRAPT YRENT YRIVD YRNEH YSAME YTOST YUANS YUCAS YUCCA YUCCH YUCKO YUCKS YUCKY YUFTS YUGAS YUKED YUKES YUKKY YUKOS YULAN YULES YUMMO YUMMY YUMPS YUPON YUPPY YURTA YURTS YUZUS ZABRA ZACKS ZAIRE ZAKAT ZAMAN ZAMBO ZAMIA ZANJA ZANTE ZANZA ZANZE ZAPPY ZARFS ZATIS ZAXES ZAYIN ZAZEN ZEALS ZEBEC ZEBRA ZEBUB ZEBUS ZEINS ZERDA ZERKS ZEROS ZESTS ZESTY ZETAS ZEXES ZEZES ZHOMO ZIBET ZIFFS ZIGAN ZILAS ZILCH ZILLA ZILLS ZIMBI ZIMBS ZINCO ZINCS ZINCY ZINEB ZINES ZINGS ZINGY ZINKE ZINKY ZIPPO ZIPPY ZIRAM ZITIS ZIZEL ZIZIT ZLOTE ZLOTY ZOAEA ZOBOS ZOBUS ZOCCO ZOEAE ZOEAL ZOEAS ZOISM ZOIST ZOMBI ZONAE ZONAL ZONDA ZONED ZONER ZONES ZONKS ZOOEA ZOOEY ZOOID ZOOKS ZOOMS ZOONS ZOOTY ZOPPA ZOPPO ZORIL ZORIS ZORRO ZOUKS ZOWIE ZULUS ZUPAN ZUPAS ZURFS ZUZIM ZYGAL ZYGON ZYMES ZYMIC`
             words = words.split(" ");
             
-            let pool = ['E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E',   
+            const pool = ['E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E', 'A', 'R', 'I', 'E',   
             'O', 'T', 'N', 'S', 'L', 'O', 'T', 'N', 'S', 'L', 'O', 'T', 'N', 'S', 'L', 'O', 'T', 'N', 'S', 'L', 'O', 'T', 'N', 'S', 'L', 'O', 'T', 'N', 'S', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'M', 'P', 
             'U', 'V', 'W', 'Y', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'M', 'P', 'U', 'V', 'W', 'Y', 'B', 'C', 'D', 'F', 'X', 'Z', 'J', 'Q']
             
             let date = new Date;
-            let y = date.getUTCFullYear();
-            let m = date.getUTCMonth();
-            let d = date.getUTCDay();
+            const y = date.getUTCFullYear();
+            const m = date.getUTCMonth();
+            const d = date.getUTCDay();
             date = new Date(y, m, (d + 2));
             date = date - (date.getTimezoneOffset() - 60000);
+            console.log(date)
 
-            let rowWords = [false, false, false, false, false];
-            let colWords = [false, false, false, false, false];
+            let rowWords, colWords = [false, false, false, false, false];
             let score = 0;
             let guesses = 6;
-            let queryString = window.location.search;
-            let urlParams = new URLSearchParams(queryString);
+            const queryString = window.location.search;
+            const urlParams = new URLSearchParams(queryString);
             let param = urlParams.get('endless')
             let seed, selectedCell;
             
@@ -243,9 +243,9 @@
             
             function genKeyboard() {
                 let keyboard = ``;
-                let rowOne = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
-                let rowTwo = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L']
-                let rowThree = ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
+                const rowOne = ['Q', 'W', 'E', 'R', 'T', 'Y', 'U', 'I', 'O', 'P']
+                const rowTwo = ['A', 'S', 'D', 'F', 'G', 'H', 'J', 'K', 'L']
+                const rowThree = ['Z', 'X', 'C', 'V', 'B', 'N', 'M']
             
                 keyboard += '<div class="key-row">';
                 rowOne.map((x => {
