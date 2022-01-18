@@ -185,10 +185,10 @@
             
             let date = new Date();
             let dateMs = Date.now(date);
-            date = new Date(dateMs + (date.getTimezoneOffset() + 60000))
-            let y = date.getFullYear();
-            let m = date.getMonth();
-            let d = date.getDate();
+            date = new Date(dateMs + (date.getTimezoneOffset() * 60000))
+            let y = date.getUTCFullYear();
+            let m = date.getUTCMonth();
+            let d = date.getUTCDate();
             date = new Date(y, m, d);
 
             console.log(date)
