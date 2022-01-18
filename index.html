@@ -189,10 +189,9 @@
             let y = date.getUTCFullYear();
             let m = date.getUTCMonth();
             let d = date.getUTCDate();
-            date = new Date(y, m, d);
-
+            date = new Date(y, m, d).toUTCString();
             console.log(date)
-            console.log(new Date(date))
+            date = Date.parse(date);
 
             let rowWords = [false, false, false, false, false];
             let colWords = [false, false, false, false, false];
@@ -204,7 +203,7 @@
             let seed, selectedCell;
             
             if (param !== "yes") {
-                seed = parseInt(date / 10000000);
+                seed = parseInt(date / 1000000);
                 seed = seed.toString();
             } else {
                 seed = Math.random();
