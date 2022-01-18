@@ -184,9 +184,9 @@
             'U', 'V', 'W', 'Y', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'M', 'P', 'U', 'V', 'W', 'Y', 'B', 'C', 'D', 'F', 'X', 'Z', 'J', 'Q']
             
             let date = new Date;
-            let y = date.getUTCFullYear();
-            let m = date.getUTCMonth();
-            let d = date.getUTCDay();
+            let y = date.getYear();
+            let m = date.getMonth();
+            let d = date.getDay();
             date = new Date(y, m, (d + 2));
             date = date - (date.getTimezoneOffset() - 60000);
 
