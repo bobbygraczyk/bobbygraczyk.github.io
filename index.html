@@ -184,13 +184,15 @@
             'U', 'V', 'W', 'Y', 'B', 'C', 'D', 'F', 'G', 'H', 'K', 'M', 'P', 'U', 'V', 'W', 'Y', 'B', 'C', 'D', 'F', 'X', 'Z', 'J', 'Q']
             
             let date = new Date();
-            console.log(date)
+            let dateMs = Date.now(date);
+            date = new Date(dateMs + (date.getTimezoneOffset() + 60000))
             let y = date.getFullYear();
             let m = date.getMonth();
             let d = date.getDate();
-            date = new Date(new Date(y, m, d).getTime() + (date.getTimezoneOffset() + 60000)).getTime();
+            date = new Date(y, m, d);
 
             console.log(date)
+            console.log(new Date(date))
 
             let rowWords = [false, false, false, false, false];
             let colWords = [false, false, false, false, false];
