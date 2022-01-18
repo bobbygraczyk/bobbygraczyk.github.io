@@ -185,12 +185,15 @@
             
             let date = new Date();
             console.log(date)
-            date = Date.now(date)
-            date = new Date(date)
-            date = new Date(date.getTime() + (date.getTimezoneOffset() * 60000));
-            console.log(new Date(date))
+            let y = date.getFullYear();
+            let m = date.getMonth();
+            let d = date.getDate();
+            date = new Date(new Date(y, m, d).getTime() + (date.getTimezoneOffset() + 60000)).getTime();
 
-            let rowWords, colWords = [false, false, false, false, false];
+            console.log(date)
+
+            let rowWords = [false, false, false, false, false];
+            let colWords = [false, false, false, false, false];
             let score = 0;
             let guesses = 6;
             const queryString = window.location.search;
@@ -199,9 +202,7 @@
             let seed, selectedCell;
             
             if (param !== "yes") {
-                seed = date;
-                console.log(seed)
-                seed = parseInt(seed / 10000000);
+                seed = parseInt(date / 10000000);
                 seed = seed.toString();
             } else {
                 seed = Math.random();
